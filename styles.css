@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --dark-color: #232946;
+    --primary-color: #6C7A89;
+    --accent-color: #b8c1ec;
+    --light-color: #E0E7E9;
+    --paragraph-color: #b8c1ec;
+    font-family: "Montserrat", sans-serif;
+    color: var(--light-color);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+    padding:  0 10%;
+    background-color: var(--dark-color);
+    z-index: 999;
+}
+
+header h1 {
+    color: var(--accent-color);
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a {
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%;
+    background-color: var(--dark-color);
+}
+
+aside img {
+    width: 35vw;
+    height: 70vh;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.527);
+}
+
+aside img:hover {
+    transform: scale(1.01);
+    transition: 0.5s;
+}
+
+bold {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+article {
+    width: 35vw;
+}
+
+article h2 {
+    font-size: 4vw;
+}
+
+article p {
+    font-size: 2vw;
+    color: var(--paragraph-color);
+    margin: 30px 0;
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #232946;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 40px;
+    font-size: 1.5vw;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+}
+
+.controller {
+    display: flex;
+    padding: 0 10%;
+    margin-bottom: 20px;
+    height: 120px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.controller button {
+    background-color: var(--dark-color);
+    color: var(--accent-color);
+}
+
+#portfolio {
+    width: 100%;
+    background-color: var(--accent-color);
+    padding: 0 7.8%;
+}
+
+.gallery {
+    margin: 0 auto;
+}
+
+.gallery-item img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
+    box-shadow: 0px 5px 5px #232946;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+
+.section {
+    height: 100vh;
+}
+
+footer {
+    background-color: var(--dark-color);
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+
+footer p {
+    font-size: 20px;
+}
+
+footer .socials {
+    display: flex;
+    width: 8%;
+    justify-content: space-between;
+}
+
+footer i {
+    font-size: 42px;
+    margin-top: 10px;
+}
+
