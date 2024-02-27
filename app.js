@@ -11,3 +11,4 @@ for (let i = 1; i <= amountOfImages; i++) {
 }
 
 container.innerHTML = htmlContent;
+msnry.reloadItems();
