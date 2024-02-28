@@ -24,6 +24,7 @@
                 <h2>Hi, I'm <bold>Neer.</bold></h2>
                 <p>My name is Neer Singh & I am a student at Belmont High School in Belmont, MA. Presented is my photography.</p>  
                 <a href="#portfolio"><button>View gallery</button></a>
+                <a href="#contact" class="mobilecontact"><button>Contact</button></a>
             </article>
             <aside>
                 <img src="img/neer.jpg" alt="">
@@ -33,10 +34,10 @@
 
     <div id="portfolio"> 
         <div class="controller">
-            <button class="active" data-filter="*">All</button>
-            <button data-filter=".nature">Nature</button>
-            <button data-filter=".portrait">Portrait</button>
-            <button data-filter=".landscape">Landscape</button>
+            <button class="active" onclick="filterImages('all')">All</button>
+            <button onclick="filterImages('nature')">Nature</button>
+            <button>Portrait</button>
+            <button>Landscape</button>
         </div>
         <div class="gallery" id="gallery">
         </div>
@@ -62,6 +63,26 @@
                 isFitWidth: true
             });
         });
+    </script>
+    <script>
+        var msnry = new Masonry( elem, {
+                itemSelector: '.gallery-item',
+                isFitWidth: true
+            });
+        function filterImages(category) {
+        // Retrieve all images
+            const images = document.querySelectorAll('.gallery-item');
+
+            // Loop through images to show/hide based on the category
+            images.forEach(img => {
+                if (category === 'all' || img.dataset.category === category) {
+                img.style.display = 'flex'; // Show image
+                } else {
+                img.style.display = 'none'; // Hide image
+                }
+            });
+            msnry.layout();
+        }
     </script>
     
 </body>

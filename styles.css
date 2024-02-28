@@ -90,6 +90,10 @@ button {
     text-align: center;
 }
 
+.mobilecontact {
+    display: none;
+}
+
 .controller {
     display: flex;
     padding: 0 10%;
@@ -120,6 +124,7 @@ button {
     margin: 10px;
     box-shadow: 0px 5px 5px #232946;
 }
+
 
 .gallery-item:hover {
     transform: scale(1.05);
@@ -156,3 +161,83 @@ footer i {
     margin-top: 10px;
 }
 
+@media screen and (max-width: 1000px) {
+    aside img {
+        height: auto;
+    }
+    article h2 {
+        font-size: 5.5vw;
+    }
+    article p {
+        font-size: 2.8vw;
+        margin: 8px 0;
+    }
+
+    button {
+        padding: 15px 25px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    aside img {
+        display: none;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    article {
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    article h2 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    article p {
+        text-align: center;
+        font-size: 20px;
+        margin: 13px 0;
+    }
+
+    button {
+        width: 200px;
+        height: 35px;
+        padding: 10px 0;
+        font-size: 10px;
+        
+    }
+
+    header h1 {
+        white-space: nowrap;
+    
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .mobilecontact {
+        display: block;
+    }
+
+    .controller {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .controller button {
+        width: 20%;
+    }
+
+}
