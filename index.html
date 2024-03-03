@@ -21,7 +21,7 @@
 
         <main>
             <article>
-                <h2>Hi, I'm <bold>Neer.</bold></h2>
+                <h2>Hi, I'm <bold>Neer</bold></h2>
                 <p>My name is Neer Singh & I am a student at Belmont High School in Belmont, MA. Presented is my photography.</p>  
                 <a href="#portfolio"><button>View gallery</button></a>
                 <a href="#contact" class="mobilecontact"><button>Contact</button></a>
@@ -34,10 +34,10 @@
 
     <div id="portfolio"> 
         <div class="controller">
-            <button class="active" onclick="filterImages('all')">All</button>
-            <button onclick="filterImages('nature')">Nature</button>
-            <button>Portrait</button>
-            <button>Landscape</button>
+            <button class="filter-button">All</button>
+            <button class="filter-button" data-filter=".nature">Nature</button>
+            <button class="filter-button">Portrait</button>
+            <button class="filter-button">Landscape</button>
         </div>
         <div class="gallery" id="gallery">
         </div>
@@ -54,35 +54,29 @@
     <script src="app.js"></script>
     <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script>
         var elem = document.querySelector('.gallery');
+        
+        var iso;
 
         imagesLoaded( elem, function() {
-            var msnry = new Masonry( elem, {
+            iso = new Isotope( elem, {
                 itemSelector: '.gallery-item',
-                isFitWidth: true
-            });
-        });
-    </script>
-    <script>
-        var msnry = new Masonry( elem, {
-                itemSelector: '.gallery-item',
-                isFitWidth: true
-            });
-        function filterImages(category) {
-        // Retrieve all images
-            const images = document.querySelectorAll('.gallery-item');
-
-            // Loop through images to show/hide based on the category
-            images.forEach(img => {
-                if (category === 'all' || img.dataset.category === category) {
-                img.style.display = 'flex'; // Show image
-                } else {
-                img.style.display = 'none'; // Hide image
+                masonry: {
+                    isFitWidth: true
                 }
             });
-            msnry.layout();
-        }
+        });
+        
+        var filterButtons = document.querySelectorAll('.filter-button');
+        filterButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var filterValue = this.getAttribute('data-filter');
+                iso.arrange({ filter: filterValue });
+                iso.arrange();
+            });
+        });
     </script>
     
 </body>

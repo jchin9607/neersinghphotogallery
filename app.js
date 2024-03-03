@@ -18,7 +18,8 @@ for (let i = 1; i <= natureImages; i++) {
   htmlContent += `<div class="gallery-item nature" data-category="nature"><img src="https://ik.imagekit.io/64c35uuyg/Nature/tr:w-600/${i}.jpg" alt="" ></div>`;
 }
 
-container.innerHTML = htmlContent;
+const allhtmlContent = htmlContent;
 
+container.innerHTML = htmlContent;
 
 
